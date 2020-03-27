@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright 2018 Mike Hummel
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>karaf-cache</artifactId>
+	<packaging>bundle</packaging>
+	<description>Commands for osgi cache in apache karaf</description>
+    <parent>
+        <artifactId>mhus-osgi-cache</artifactId>
+        <groupId>de.mhus.osgi</groupId>
+        <version>7.0.0-SNAPSHOT</version>
+    </parent>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+						<Bundle-Version>${project.version}</Bundle-Version>
+						<Export-Package>
+						  de.mhus.osgi.cache.karaf.*;version=${project.version}
+						</Export-Package>
+						<Import-Package>
+						    com.hazelcase.*;resolution:=optional,
+							*
+						</Import-Package>
+						<Service-Component>*</Service-Component>
+                        <DynamicImport-Package>*</DynamicImport-Package>
+					</instructions>
+				</configuration>
+			</plugin>
+                <plugin>
+                    <groupId>de.mhus.apache.karaf.tooling</groupId>
+                    <artifactId>karaf-services-maven-plugin</artifactId>
+                </plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.osgi</groupId>
+			<artifactId>org.osgi.compendium</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.karaf.shell</groupId>
+			<artifactId>org.apache.karaf.shell.console</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>de.mhus.lib</groupId>
+			<artifactId>lib-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>de.mhus.osgi</groupId>
+			<artifactId>osgi-services</artifactId>
+		</dependency>
+        <dependency>
+            <groupId>de.mhus.osgi</groupId>
+            <artifactId>osgi-cache-api</artifactId>
+            <version>${mhus-osgi-cache.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>javax.cache</groupId>
+          <artifactId>cache-api</artifactId>
+          <!-- 
+          <version>1.1.1</version>
+          <version>1.0.0-PFD</version>
+           -->
+        </dependency>
+				
+	</dependencies>
+</project>
