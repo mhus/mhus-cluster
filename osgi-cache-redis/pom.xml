@@ -19,9 +19,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>osgi-cache-hazelcast</artifactId>
+	<artifactId>osgi-cache-redis</artifactId>
 	<packaging>bundle</packaging>
-	<description>Cache Hazelcast implementation</description>
+	<description>Cache Ehcache implementation</description>
 	<parent>
 		<artifactId>mhus-osgi-cache</artifactId>
 		<groupId>de.mhus.osgi</groupId>
@@ -39,7 +39,7 @@
 						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
 						<Bundle-Version>${project.version}</Bundle-Version>
 						<Export-Package>
-							de.mhus.osgi.cache.hazelcast.*;version=${project.version}
+							de.mhus.osgi.cache.redis.*;version=${project.version}
 						</Export-Package>
 						<Import-Package>
                             *
@@ -83,10 +83,12 @@
 		  <groupId>javax.cache</groupId>
 		  <artifactId>cache-api</artifactId>
 		</dependency>
+		
 		<dependency>
-		  <groupId>com.hazelcast</groupId>
-		  <artifactId>hazelcast-all</artifactId>
-		</dependency>
+		   <groupId>org.redisson</groupId>
+		   <artifactId>redisson</artifactId>
+		   <version>3.12.4</version>
+		</dependency> 
 		
 	</dependencies>
 </project>

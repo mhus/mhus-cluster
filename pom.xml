@@ -56,7 +56,8 @@
 
 	<modules>
         <module>osgi-cache-api</module>
-		<module>osgi-cache-hazelcase</module>
+		<module>osgi-cache-redis</module>
+		<module>osgi-cache-ehcache</module>
 		<module>karaf-cache</module>
 	</modules>
 </project>
