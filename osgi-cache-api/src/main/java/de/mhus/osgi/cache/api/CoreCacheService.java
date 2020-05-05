@@ -76,7 +76,8 @@ public abstract class CoreCacheService<K, V> extends MLog implements CacheServic
 		return def.cluster();
 	}
 
-	public void configure(MutableConfiguration<K,V> configuration) {
+	@Override
+    public void configure(MutableConfiguration<K,V> configuration) {
 		CacheConfiguration def = getClass().getAnnotation(CacheConfiguration.class);
 		if (def == null) return;
 //		if (def.writeThrough()) {
