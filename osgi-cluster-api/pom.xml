@@ -19,11 +19,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>osgi-cache-api</artifactId>
+	<artifactId>osgi-cluster-api</artifactId>
 	<packaging>bundle</packaging>
-	<description>Cache API</description>
+	<description>Cluster API</description>
 	<parent>
-		<artifactId>mhus-osgi-cache</artifactId>
+		<artifactId>mhus-osgi-cluster</artifactId>
 		<groupId>de.mhus.osgi</groupId>
 		<version>7.0.0-SNAPSHOT</version>
 	</parent>
@@ -39,7 +39,7 @@
 						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
 						<Bundle-Version>${project.version}</Bundle-Version>
 						<Export-Package>
-							de.mhus.osgi.cache.api.*;version=${project.version}
+							de.mhus.osgi.cluster.api.*;version=${project.version}
 						</Export-Package>
 						<Import-Package>
                             *
