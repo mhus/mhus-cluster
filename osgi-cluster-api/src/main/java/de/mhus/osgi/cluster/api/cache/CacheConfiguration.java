@@ -1,4 +1,4 @@
-package de.mhus.osgi.cache.api;
+package de.mhus.osgi.cluster.api.cache;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

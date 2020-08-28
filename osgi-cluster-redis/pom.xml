@@ -19,11 +19,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>osgi-cache-redis</artifactId>
+	<artifactId>osgi-cluster-redis</artifactId>
 	<packaging>bundle</packaging>
-	<description>Cache Ehcache implementation</description>
+	<description>Redis cluster implementation</description>
 	<parent>
-		<artifactId>mhus-osgi-cache</artifactId>
+		<artifactId>mhus-osgi-cluster</artifactId>
 		<groupId>de.mhus.osgi</groupId>
 		<version>7.0.0-SNAPSHOT</version>
 	</parent>
@@ -39,7 +39,7 @@
 						<Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
 						<Bundle-Version>${project.version}</Bundle-Version>
 						<Export-Package>
-							de.mhus.osgi.cache.redis.*;version=${project.version}
+							de.mhus.osgi.cluster.redis.*;version=${project.version}
 						</Export-Package>
 						<Import-Package>
                             *
@@ -66,29 +66,29 @@
                 <artifactId>bndlib</artifactId>
         </dependency>
 		<dependency>
-			<groupId>org.apache.karaf.shell</groupId>
-			<artifactId>org.apache.karaf.shell.console</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>de.mhus.lib</groupId>
 			<artifactId>lib-core</artifactId>
 		</dependency>
 		
 		<dependency>
 		  <groupId>de.mhus.osgi</groupId>
-		  <artifactId>osgi-cache-api</artifactId>
-		  <version>${project.version}</version>
+		  <artifactId>osgi-cluster-api</artifactId>
 		</dependency>
 		<dependency>
 		  <groupId>javax.cache</groupId>
 		  <artifactId>cache-api</artifactId>
 		</dependency>
-		
+		<!-- 
 		<dependency>
 		   <groupId>org.redisson</groupId>
 		   <artifactId>redisson</artifactId>
 		   <version>3.12.4</version>
 		</dependency> 
-		
+		 -->
+		<dependency>
+		    <groupId>redis.clients</groupId>
+		    <artifactId>jedis</artifactId>
+		    <version>2.4.2</version>
+		</dependency>		
 	</dependencies>
 </project>

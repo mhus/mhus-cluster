@@ -1,4 +1,4 @@
-package de.mhus.osgi.cache.api;
+package de.mhus.osgi.cluster.api.cache;
 
 import javax.cache.Cache;
 import javax.cache.configuration.MutableConfiguration;

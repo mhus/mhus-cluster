@@ -56,5 +56,7 @@
 
 	<modules>
         <module>osgi-cluster-api</module>
+        <module>osgi-cluster-core</module>
+        <module>karaf-cluster</module>
 	</modules>
 </project>
