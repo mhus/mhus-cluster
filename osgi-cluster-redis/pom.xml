@@ -23,7 +23,7 @@
 	<packaging>bundle</packaging>
 	<description>Redis cluster implementation</description>
 	<parent>
-		<artifactId>mhus-osgi-cluster</artifactId>
+		<artifactId>mhus-cluster</artifactId>
 		<groupId>de.mhus.osgi</groupId>
 		<version>7.0.0-SNAPSHOT</version>
 	</parent>
