@@ -34,6 +34,7 @@
 	<properties>
 	   <mhus-cluster.version>${project.version}</mhus-cluster.version>
 	</properties>
+    <inceptionYear>2020</inceptionYear>
 	<licenses>
 		<license>
 			<name>The Apache Software License, Version 2.0</name>
